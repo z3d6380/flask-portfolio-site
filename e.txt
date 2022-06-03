@@ -2,4 +2,7 @@ method1(a,b) {
     return a*b;
 }
 
+method2(a,b) {
+    return a/b;
+}
 
