@@ -39,8 +39,7 @@
       </div>
       <h1>{{ nameOfPage }}</h1>
       <h3>{{ type }}</h3>
-      {% for person in people %}
-        {{ person|capitalize }}<br/>
+      {% for person in people %} {{ person.name|title }}<br />
       {% endfor %}
     </div>
   </body>
