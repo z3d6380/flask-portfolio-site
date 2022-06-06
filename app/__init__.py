@@ -37,8 +37,8 @@ class Hobby:
 
 def GetPeople():
     Lucas = Person("Lucas Cancio"
-                , [Hobby("game development", ["./static/img/lucas/gameDev02.png", "./static/img/lucas/gameDev03.png"], "I enjoy making games, mainly the programming aspect since I am not the best artist. You can check out some of the things I have made on my Itch.io page.")
-                    , Hobby("martial arts", ["./static/img/lucas/tkd.png"], "I like doing different forms of martial arts, including Taekwondo, Brazilian Jiu Jitsu, and kick boxing.")
+                , [Hobby("game development", ["./static/img/lucas/gameDev02.PNG", "./static/img/lucas/gameDev03.PNG"], "I enjoy making games, mainly the programming aspect since I am not the best artist. You can check out some of the things I have made on my Itch.io page.")
+                    , Hobby("martial arts", ["./static/img/lucas/tkd.PNG"], "I like doing different forms of martial arts, including Taekwondo, Brazilian Jiu Jitsu, and kick boxing.")
                     , Hobby("outdoors stuff", ["./static/img/lucas/outdoors01.jpg", "./static/img/lucas/outdoors02.jpg", "./static/img/lucas/outdoors03.jpg"], "I enjoy biking and hiking in a nature park near my home.")]
                 , [WorkExperience("May 2020", "August 2020", "TheCoderSchool", "Programming Tutor", "I tutored kids on how to program using C++, Python, and Scratch.")
                     , WorkExperience("June 2021", "September 2021", "Machine Intelligence Lab @ UF", "Undergraduate Researcher", "I mainly focused on documenting an autonomous submarine's simulation software.")]
