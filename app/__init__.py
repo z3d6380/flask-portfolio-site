@@ -13,8 +13,10 @@ def index():
 
 @app.route('/aboutus')
 def aboutus():
-    return render_template('templatetest.html', nameOfPage="About Us", type="About Us", information="Luis - , Lucas - , Maurice - ",  url=os.getenv("URL"))
+    people = ["Luis", "Lucas", "Maurice"]
+    return render_template('templatetest.html', nameOfPage="About Us", type="About Us", people=people,  url=os.getenv("URL"))
 
 @app.route('/hobbies')
 def hobbies():
-    return render_template('templatetest.html', nameOfPage="Hobbies", type="Our Hobbies", information="Luis - , Lucas - , Maurice - ",  url=os.getenv("URL"))
+    people = ["Luis", "Lucas", "Maurice"]
+    return render_template('templatetest.html', nameOfPage="Hobbies", type="Our Hobbies", people=people,  url=os.getenv("URL"))
