@@ -19,7 +19,7 @@
 
     <link lang="sass" rel="stylesheet" href="./static/styles/main.css" />
     <link rel="icon" href="./static/img/favicon.ico" type="image/x-icon" />
-    <title>{{ nameOfPage }}</title>
+    <title>{{ title }}</title>
   </head>
 
   <body>
@@ -28,6 +28,7 @@
         <a href="/">Home</a>
         <a href="/about">About Us</a>
         <a href="/hobbies">Hobbies</a>
+        <a href="/map">Map</a>
         <a href="/">
           <div class="nav-logo">
             <img src="./static/img/logo.svg" />
@@ -35,7 +36,6 @@
         </a>
       </div>
     </header>
-
     {% block content %} {% endblock %}
   </body>
 </html>
