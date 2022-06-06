@@ -47,18 +47,22 @@ def GetPeople():
                     , WorkExperience("June 2021", "September 2021", "Machine Intelligence Lab @ UF", "Undergraduate Researcher", "I mainly focused on documenting a submarine's simulation software")]
                 , [Education("University of Florida", "May 2023", "Bachelor's of Science in Computer Science")]
                 , "A little bit about me..."
-                ,"", "./static/img/logo.jpg")
+                , ""
+                , "./static/img/logo.jpg")
 
     #TODO: fill in
     Luis = Person("Luis Moraguez"
-                , [Hobby("game development", ["./static/img/logo.jpg", "./static/img/logo.jpg"])
-                    , Hobby("martial arts", ["./static/img/logo.jpg", "./static/img/logo.jpg"])
-                    , Hobby("biking", ["./static/img/logo.jpg", "./static/img/logo.jpg"])]
-                , [WorkExperience("May 2020", "August 2020", "TheCoderSchool", "Programming Tutor", "I tutored kids on how to program")
-                    , WorkExperience("June 2021", "September 2021", "Machine Intelligence Lab @ UF", "Undergraduate Researcher", "I mainly focused on documenting a submarine's simulation software")]
-                , [Education("University of Florida", "May 2023", "Bachelor's of Science in Computer Science")]
-                , "A little bit about me..."
-                ,"", "./static/img/logo.jpg")
+                , [Hobby("kayaking", ["./static/img/luis/kayak.jpg"])
+                    , Hobby("running", ["./static/img/luis/running.jpg"])
+                    , Hobby("camping", ["./static/img/luis/camping.jpg"])]
+                , [WorkExperience("March 2017", "April 2021", "City of Kissimmee Information Technology", "Enterprise Applications Administrator", "Responsible for implementing, maintaining, and upgrading all of the city's Enterprise Public Safety applications. Projects: Custom developed interface to send live accident data to Waze, implemented Workforce Telestaff, implemented export from OneSolutionCAD to ESO, custom developed forms and reports for various needs of Police and Fire Departments, implemented body camera system for Police, implemented SSO for body camera system, custom developed integration between OneSolutionCAD and body camera system, custom developed self-service web app for Police. Also responsible for mapping departmental workflow processes, testing the applications, working with vendors to resolve software bugs or issues, creating documentation, training staff, and evaluating new features or products.")
+                    ,WorkExperience("April 2015", "March 2017", "City of Kissimmee Information Technology", "Computer Specialist", "Handled all the trouble calls from every department in the city, including public safety departments by providing onsite and remote support for users. Responsible for the configuration of new equipment purchased for each department. Responsible for handling on-call and after-hours issues from public safety departments on a rotation. Effectively communicated with 3 rd party support from hardware/software vendors, partners, and technical support. Maintained accurate documentation of hardware to be deployed or disposed of, and documentation of all interactions with users and the steps taken to resolve their issues. Maintained positive working relationships with users throughout the city departments.")]
+                , [Education("Florida Polytechnic University", "May 2023", "Bachelor's of Science in Computer Science")
+                    ,Education("Valencia College", "May 2017", "Associate of Science in Network Engineering")
+                    ,Education("Valencia College", "May 2017", "Associate of Science in Cyber Security")]
+                , "Hi everyone, my name is Luis Moraguez. I was born in raised in Kissimmee, FL. I've always had a passion for technology. I've spent the last 10+ years working professionally in the IT field, and I've recently decided to switch to Computer Science because I want to build technology to help people. When I'm not in front of the computer, I love to be outdoors!"
+                , ""
+                , "./static/img/luis/profile.jpg")
                 
     #TODO: fill in
     Maurice = Person("Maurice Korish"
