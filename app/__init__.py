@@ -74,13 +74,17 @@ def GetPeople():
 
 @app.route('/')
 def index():
-    return render_template('index.html', title="MLH Fellow", url=os.getenv("URL"))
+    return render_template('index.html', title="Home Page", url=os.getenv("URL"))
 
 
 @app.route('/about')
 def aboutus():
-    return render_template('about.html', nameOfPage="About Us", type="About Us", people=GetPeople(),  url=os.getenv("URL"))
+    return render_template('about.html', title="About Us", type="About Us", people=GetPeople(),  url=os.getenv("URL"))
 
 @app.route('/hobbies')
 def hobbies():
-    return render_template('hobbies.html', nameOfPage="Hobbies", type="Our Hobbies", people=GetPeople(),  url=os.getenv("URL"))
+    return render_template('hobbies.html', title="Hobbies", type="Our Hobbies", people=GetPeople(),  url=os.getenv("URL"))
+
+@app.route('/map')
+def map():
+    return render_template('map.html', title="Map of Places We Have Visited",  url=os.getenv("URL"))

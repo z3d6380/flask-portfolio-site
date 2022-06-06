@@ -1,5 +1,11 @@
 {% extends "layout.html" %} 
 {% block content %} 
+    <div class="profile">
+        <div id="profile-picture" class="profile-picture">
+            <img src="./static/img/logo.jpg">
+        </div>
+        <h1>{{ title }}</h1>
+    </div>
     {% for person in people %}
         <h2>{{ person.name|title }}</h2>
         <h3>About Me:</h3>
