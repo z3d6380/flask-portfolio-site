@@ -15,8 +15,6 @@ class Person:
         self.travelMapURL = _travelMapURL
         self.profileImageURL = _profileImageURL
 
-
-
 class WorkExperience:
     def __init__(self, _startDate, _endDate, _organization, _role, _roleDescriptions = ""):
         self.startDate = _startDate
@@ -38,19 +36,17 @@ class Hobby:
         self.description = _description
 
 def GetPeople():
-    #TODO: fill in
     Lucas = Person("Lucas Cancio"
-                , [Hobby("game development", ["./static/img/logo.jpg", "./static/img/logo.jpg"])
-                    , Hobby("martial arts", ["./static/img/logo.jpg", "./static/img/logo.jpg"])
-                    , Hobby("biking", ["./static/img/logo.jpg", "./static/img/logo.jpg"])]
-                , [WorkExperience("May 2020", "August 2020", "TheCoderSchool", "Programming Tutor", "I tutored kids on how to program")
-                    , WorkExperience("June 2021", "September 2021", "Machine Intelligence Lab @ UF", "Undergraduate Researcher", "I mainly focused on documenting a submarine's simulation software")]
+                , [Hobby("game development", ["./static/img/lucas/gameDev02.png", "./static/img/lucas/gameDev03.png"], "I enjoy making games, mainly the programming aspect since I am not the best artist. You can check out some of the things I have made on my Itch.io page.")
+                    , Hobby("martial arts", ["./static/img/lucas/tkd.png"], "I like doing different forms of martial arts, including Taekwondo, Brazilian Jiu Jitsu, and kick boxing.")
+                    , Hobby("outdoors stuff", ["./static/img/lucas/outdoors01.jpg", "./static/img/lucas/outdoors02.jpg", "./static/img/lucas/outdoors03.jpg"], "I enjoy biking and hiking in a nature park near my home.")]
+                , [WorkExperience("May 2020", "August 2020", "TheCoderSchool", "Programming Tutor", "I tutored kids on how to program using C++, Python, and Scratch.")
+                    , WorkExperience("June 2021", "September 2021", "Machine Intelligence Lab @ UF", "Undergraduate Researcher", "I mainly focused on documenting an autonomous submarine's simulation software.")]
                 , [Education("University of Florida", "May 2023", "Bachelor's of Science in Computer Science")]
-                , "A little bit about me..."
+                , "Hello everyone! I am a 4th year CS major at University of Florida in the USA. I am pursuing becoming a professional software developer with a focus on web development. From what I have learned so far from this program, I am now also considering being a production engineer. I love programming and the power it gives me to create things like games and what ever cool app ideas I can imagine."
                 , ""
-                , "./static/img/logo.jpg")
+                , "./static/img/lucas/lucas.jpg")
 
-    #TODO: fill in
     Luis = Person("Luis Moraguez"
                 , [Hobby("kayaking", ["./static/img/luis/kayak.jpg"])
                     , Hobby("running", ["./static/img/luis/running.jpg"])
@@ -64,7 +60,6 @@ def GetPeople():
                 , ""
                 , "./static/img/luis/profile.jpg")
                 
-    #TODO: fill in
     Maurice = Person("Maurice Korish"
                 , [Hobby("Model United Nations", ["./static/img/Maurice/modelun.jpg"])
                     , Hobby("Track/Cross Country", ["./static/img/Maurice/track.jpg"])
