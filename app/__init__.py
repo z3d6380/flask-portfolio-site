@@ -6,7 +6,7 @@ load_dotenv()
 app = Flask(__name__)
 
 class Person:
-    def __init__(self, _name, _hobbies, _workExperience, _education, _aboutMe, _travelMapURL ="", _profileImageURL = "./static/img/logo.jpg"):
+    def __init__(self, _name, _hobbies, _workExperience, _education, _aboutMe, _travelMapURL, _profileImageURL="./static/img/logo.jpg"):
         self.name = _name
         self.hobbies = _hobbies
         self.workExperience = _workExperience
@@ -44,30 +44,30 @@ def GetPeople():
                     , WorkExperience("June 2021", "September 2021", "Machine Intelligence Lab @ UF", "Undergraduate Researcher", "I mainly focused on documenting an autonomous submarine's simulation software.")]
                 , [Education("University of Florida", "May 2023", "Bachelor's of Science in Computer Science")]
                 , "Hello everyone! I am a 4th year CS major at University of Florida in the USA. I am pursuing becoming a professional software developer with a focus on web development. From what I have learned so far from this program, I am now also considering being a production engineer. I love programming and the power it gives me to create things like games and what ever cool app ideas I can imagine."
-                , "./static/img/lucas/lucas.jpg"
+                , ""
                 , "./static/img/lucas/lucas.jpg")
 
-    #TODO: fill in
     Luis = Person("Luis Moraguez"
-                , [Hobby("game development", ["./static/img/logo.jpg", "./static/img/logo.jpg"])
-                    , Hobby("martial arts", ["./static/img/logo.jpg", "./static/img/logo.jpg"])
-                    , Hobby("biking", ["./static/img/logo.jpg", "./static/img/logo.jpg"])]
-                , [WorkExperience("May 2020", "August 2020", "TheCoderSchool", "Programming Tutor", "I tutored kids on how to program")
-                    , WorkExperience("June 2021", "September 2021", "Machine Intelligence Lab @ UF", "Undergraduate Researcher", "I mainly focused on documenting a submarine's simulation software")]
-                , [Education("University of Florida", "May 2023", "Bachelor's of Science in Computer Science")]
-                , "A little bit about me..."
-                , "./static/img/logo.jpg")
+                , [Hobby("kayaking", ["./static/img/luis/kayak.jpg"])
+                    , Hobby("running", ["./static/img/luis/running.jpg"])
+                    , Hobby("camping", ["./static/img/luis/camping.jpg"])]
+                , [WorkExperience("March 2017", "April 2021", "City of Kissimmee Information Technology", "Enterprise Applications Administrator", "Responsible for implementing, maintaining, and upgrading all of the city's Enterprise Public Safety applications. Projects: Custom developed interface to send live accident data to Waze, implemented Workforce Telestaff, implemented export from OneSolutionCAD to ESO, custom developed forms and reports for various needs of Police and Fire Departments, implemented body camera system for Police, implemented SSO for body camera system, custom developed integration between OneSolutionCAD and body camera system, custom developed self-service web app for Police. Also responsible for mapping departmental workflow processes, testing the applications, working with vendors to resolve software bugs or issues, creating documentation, training staff, and evaluating new features or products.")
+                    ,WorkExperience("April 2015", "March 2017", "City of Kissimmee Information Technology", "Computer Specialist", "Handled all the trouble calls from every department in the city, including public safety departments by providing onsite and remote support for users. Responsible for the configuration of new equipment purchased for each department. Responsible for handling on-call and after-hours issues from public safety departments on a rotation. Effectively communicated with 3 rd party support from hardware/software vendors, partners, and technical support. Maintained accurate documentation of hardware to be deployed or disposed of, and documentation of all interactions with users and the steps taken to resolve their issues. Maintained positive working relationships with users throughout the city departments.")]
+                , [Education("Florida Polytechnic University", "May 2023", "Bachelor's of Science in Computer Science")
+                    ,Education("Valencia College", "May 2017", "Associate of Science in Network Engineering")
+                    ,Education("Valencia College", "May 2017", "Associate of Science in Cyber Security")]
+                , "Hi everyone, my name is Luis Moraguez. I was born in raised in Kissimmee, FL. I've always had a passion for technology. I've spent the last 10+ years working professionally in the IT field, and I've recently decided to switch to Computer Science because I want to build technology to help people. When I'm not in front of the computer, I love to be outdoors!"
+                , ""
+                , "./static/img/luis/profile.jpg")
                 
-    #TODO: fill in
     Maurice = Person("Maurice Korish"
-                , [Hobby("game development", ["./static/img/logo.jpg", "./static/img/logo.jpg"])
-                    , Hobby("martial arts", ["./static/img/logo.jpg", "./static/img/logo.jpg"])
-                    , Hobby("biking", ["./static/img/logo.jpg", "./static/img/logo.jpg"])]
-                , [WorkExperience("May 2020", "August 2020", "TheCoderSchool", "Programming Tutor", "I tutored kids on how to program")
-                    , WorkExperience("June 2021", "September 2021", "Machine Intelligence Lab @ UF", "Undergraduate Researcher", "I mainly focused on documenting a submarine's simulation software")]
-                , [Education("University of Florida", "May 2023", "Bachelor's of Science in Computer Science")]
-                , "A little bit about me..."
-                , "./static/img/logo.jpg")
+                , [Hobby("Model United Nations", ["./static/img/Maurice/modelun.jpg"])
+                    , Hobby("Track/Cross Country", ["./static/img/Maurice/track.jpg"])
+                    , Hobby("Soccer", [])]
+                , [WorkExperience("January 2019", "May 2021", "FeedBot Project", "Lead Developer", "With a partner, I created a device that uses facial recognition technology to guide a robotic-feeding arm to an individual's mouth.")]
+                , [Education("Stanford University", "May 2026", "Bachelor's of Science in Computer Science")]
+                , "Hi! My name is Maurice Korish, and I am from New Jersey. I'm very interested in math, physics, and computer science, and I would love to work on developing technologies that can enhance our understanding of the world we live in."
+                ,"", "./static/img/Maurice/maurice.jpg")
 
     people = [Luis, Maurice, Lucas]
     return people
