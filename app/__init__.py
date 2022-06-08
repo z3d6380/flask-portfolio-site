@@ -35,17 +35,7 @@ class Hobby:
         self.pictureURLs = _pictureURLs
         self.description = _description
 
-def GetPeople():
-    Lucas = Person("Lucas Cancio"
-                , [Hobby("game development", ["./static/img/lucas/gameDev02.PNG", "./static/img/lucas/gameDev03.PNG"], "I enjoy making games, mainly the programming aspect since I am not the best artist. You can check out some of the things I have made on my Itch.io page.")
-                    , Hobby("martial arts", ["./static/img/lucas/tkd.PNG"], "I like doing different forms of martial arts, including Taekwondo, Brazilian Jiu Jitsu, and kick boxing.")
-                    , Hobby("outdoors stuff", ["./static/img/lucas/outdoors01.jpg", "./static/img/lucas/outdoors02.jpg", "./static/img/lucas/outdoors03.jpg"], "I enjoy biking and hiking in a nature park near my home.")]
-                , [WorkExperience("May 2020", "August 2020", "TheCoderSchool", "Programming Tutor", "I tutored kids on how to program using C++, Python, and Scratch.")
-                    , WorkExperience("June 2021", "September 2021", "Machine Intelligence Lab @ UF", "Undergraduate Researcher", "I mainly focused on documenting an autonomous submarine's simulation software.")]
-                , [Education("University of Florida", "May 2023", "Bachelor's of Science in Computer Science")]
-                , "Hello everyone! I am a 4th year CS major at University of Florida in the USA. I am pursuing becoming a professional software developer with a focus on web development. From what I have learned so far from this program, I am now also considering being a production engineer. I love programming and the power it gives me to create things like games and what ever cool app ideas I can imagine."
-                , ""
-                , "./static/img/lucas/lucas.jpg")
+def GetPerson():
 
     Luis = Person("Luis Moraguez"
                 , [Hobby("kayaking", ["./static/img/luis/kayak.jpg"], "I love to kayak challenging paddling trails around Florida.")
@@ -59,32 +49,14 @@ def GetPeople():
                 , "Hi everyone, my name is Luis Moraguez. I was born in raised in Kissimmee, FL. I've always had a passion for technology. I've spent the last 10+ years working professionally in the IT field, and I've recently decided to switch to Computer Science because I want to build technology to help people. When I'm not in front of the computer, I love to be outdoors!"
                 , ""
                 , "./static/img/luis/profile.jpg")
-                
-    Maurice = Person("Maurice Korish"
-                , [Hobby("Model United Nations", ["./static/img/Maurice/modelun.jpg"])
-                    , Hobby("Track/Cross Country", ["./static/img/Maurice/track.jpg"])
-                    , Hobby("Soccer", [])]
-                , [WorkExperience("January 2019", "May 2021", "FeedBot Project", "Lead Developer", "With a partner, I created a device that uses facial recognition technology to guide a robotic-feeding arm to an individual's mouth.")]
-                , [Education("Stanford University", "May 2026", "Bachelor's of Science in Computer Science")]
-                , "Hi! My name is Maurice Korish, and I am from New Jersey. I'm very interested in math, physics, and computer science, and I would love to work on developing technologies that can enhance our understanding of the world we live in."
-                ,"", "./static/img/Maurice/maurice.jpg")
 
-    people = [Luis, Maurice, Lucas]
-    return people
+    person = Luis
+    return person
 
 @app.route('/')
 def index():
-    return render_template('index.html', title="Home Page", url=os.getenv("URL"))
+    return render_template('index.html', title="Luis Moraguez - Resume", person=GetPerson(), url=os.getenv("URL"))
 
-
-@app.route('/about')
-def aboutus():
-    return render_template('about.html', title="About Us", type="About Us", people=GetPeople(),  url=os.getenv("URL"))
-
-@app.route('/hobbies')
-def hobbies():
-    return render_template('hobbies.html', title="Hobbies", type="Our Hobbies", people=GetPeople(),  url=os.getenv("URL"))
-
-@app.route('/map')
-def map():
-    return render_template('map.html', title="Map of Places We Have Visited",  url=os.getenv("URL"))
+@app.route('/portfolio-details')
+def portfolioDetails():
+    return render_template('portfolio-details.html', title="Luis Moraguez - Portfolio Details", person=GetPerson(), url=os.getenv("URL"))
