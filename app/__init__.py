@@ -6,7 +6,7 @@ load_dotenv()
 app = Flask(__name__)
 
 class Person:
-    def __init__(self, _name, _hobbies, _workExperience, _education, _aboutMe, _travelMapURL, _profileImageURL="./static/img/logo.jpg"):
+    def __init__(self, _name, _hobbies, _workExperience, _education, _aboutMe, _travelMapURL, _profileImageURL = "./static/img/logo.jpg", _summary = "", _tagline = ""):
         self.name = _name
         self.hobbies = _hobbies
         self.workExperience = _workExperience
@@ -14,6 +14,8 @@ class Person:
         self.aboutMe = _aboutMe
         self.travelMapURL = _travelMapURL
         self.profileImageURL = _profileImageURL
+        self.summary = _summary
+        self.tagline = _tagline
 
 class WorkExperience:
     def __init__(self, _startDate, _endDate, _organization, _role, _roleDescriptions = ""):
@@ -48,7 +50,9 @@ def GetPerson():
                     ,Education("Valencia College", "May 2017", "Associate of Science in Cyber Security")]
                 , "Hi everyone, my name is Luis Moraguez. I was born in raised in Kissimmee, FL. I've always had a passion for technology. I've spent the last 10+ years working professionally in the IT field, and I've recently decided to switch to Computer Science because I want to build technology to help people. When I'm not in front of the computer, I love to be outdoors!"
                 , ""
-                , "./static/img/luis/profile.jpg")
+                , "./static/img/luis/profile.jpg"
+                , "Software Engineer, Network Engineer, Cybersecurity Engineer, Database Administrator, Outdoor Enthusiast"
+                , "Here's a cool tagline!")
 
     person = Luis
     return person
