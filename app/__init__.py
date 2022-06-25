@@ -84,6 +84,11 @@ def index():
 def portfolioDetails():
     return render_template('portfolio-details.html', title="Luis Moraguez - Portfolio Details", person=GetPerson(), url=os.getenv("URL"))
 
+@app.route('/timeline')
+def timeline():
+    data = get_time_line_post([timeline_posts])
+    return render_template('timeline.html', title="Timeline")
+
 @app.route('/api/timeline_post', methods=['POST'])
 def post_time_line_post():
     name = request.form['name']
