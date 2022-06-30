@@ -5,14 +5,13 @@
     <!-- ======= Timeline Section ======= -->
     <section id="timeline" class="timeline">
 
-      <p>{{ data }}</p>
+      <p>{{ timeline_posts }}</p>
 
-      {% for x, y in data %}
-        <ul>
-          <li>
-            <p>{{ data.name }}</p>
-          </li>
-        </ul>
+      {% for timeline_post in timeline_posts %}
+        {% for key, value in timeline_post %}
+          <p>Key: {{key}}</p>
+          <p>Value: {{value}}</p>
+        {% endfor %}
       {% endfor %}
 
       <div class="timeline">

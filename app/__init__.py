@@ -87,9 +87,9 @@ def portfolioDetails():
 @app.route('/timeline')
 def timeline():
     data = get_time_line_post()
-    data = data['timeline_posts']
+    timeline_posts = data['timeline_posts']
 
-    return render_template('timeline.html', title="Timeline", data=data)
+    return render_template('timeline.html', title="Timeline", timeline_posts=timeline_posts)
 
 @app.route('/api/timeline_post', methods=['POST'])
 def post_time_line_post():
