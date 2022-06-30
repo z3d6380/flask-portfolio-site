@@ -1012,8 +1012,8 @@ section {
   position: relative;
   margin: 0 0 20px 20px;
   padding: 10px;
-  background: #333;
-  color: gray;
+  background: #999;
+  color: #333;
   border-radius: 8px;
   max-width: 400px;
 }
@@ -1027,7 +1027,7 @@ section {
 
 /* Title of the card */
 .title {
-  color: #05a0bb;
+  color: #0563bb;
   position: relative;
 }
 
@@ -1040,7 +1040,7 @@ section {
   background: white;
   border-radius: 999px;
   left: -39px;
-  border: 3px solid #05a0bb;
+  border: 3px solid #0563bb;
 }
 
 /*--------------------------------------------------------------
