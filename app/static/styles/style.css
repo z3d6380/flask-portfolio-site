@@ -998,6 +998,8 @@ section {
   background: #fff;
   margin: 20px auto;
   padding: 20px;
+  display: flex;
+  justify-content: center;
 }
 
 /* Outer Layer with the timeline border */
