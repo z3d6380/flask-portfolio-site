@@ -14,7 +14,7 @@
   
             <div class="col-lg-12 mt-5 mt-lg-0">
   
-              <form action="#" method="post" role="form" class="php-email-form">
+              <form id="timeline_form" method="post" role="form" class="php-email-form">
                 <div class="row">
                   <div class="col-md-6 form-group">
                     <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
@@ -39,6 +39,20 @@
           </div>
   
         </div>
+
+        <script>
+          const form = document.getElementById('timeline_form');
+
+          form.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const payload = new FormData(form);
+
+            console.log([...payload]);
+          })
+
+        </script>
+
       </section><!-- End Timeline POST Section -->
 
     <!-- ======= Timeline GET Section ======= -->
