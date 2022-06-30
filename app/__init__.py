@@ -87,7 +87,7 @@ def portfolioDetails():
 @app.route('/timeline')
 def timeline():
     data = get_time_line_post()
-
+    data = data[timeline_posts]
     print(data)
 
     return render_template('timeline.html', title="Timeline", data=data)
