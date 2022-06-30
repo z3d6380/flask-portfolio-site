@@ -74,6 +74,15 @@ def GetPerson():
     person = Luis
     return person
 
+gravatar = Gravatar(app,
+                    size=100,
+                    rating='g',
+                    default='identicon',
+                    force_default=False,
+                    force_lower=False,
+                    use_ssl=False,
+                    base_url=None)
+
 @app.route('/')
 def index():
     return render_template('index.html', title="Luis Moraguez - Resume", person=GetPerson(), url=os.getenv("URL"))

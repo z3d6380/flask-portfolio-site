@@ -72,7 +72,7 @@
 
               <div class="card">
                 <div class="info">
-                  <img src={{avatarUrl}} alt="{{timeline_post['name']}}"><h3 class="title">{{ timeline_post['name']|title }}</h3>
+                  <img src="{{ timeline_post['email']|gravatar }}" alt="{{timeline_post['name']}}"><h3 class="title">{{ timeline_post['name']|title }}</h3>
                   <p>{{ timeline_post['email'] }}</p>
                   <p>{{ timeline_post['content'] }}</p>
                   <p>{{ timeline_post['created_at'] }}</p>
