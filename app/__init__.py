@@ -20,7 +20,7 @@ def generateAvatarUrl(_email, _option = "identicon"):
 class TimelinePost(Model):
     name = CharField()
     email = CharField()
-    avatar_url = CharField(default=generateAvatarUrl(email))
+    avatar_url = CharField()
     content = TextField()
     created_at = DateTimeField(default=datetime.datetime.now)
     class Meta:
@@ -100,6 +100,7 @@ def timeline():
 def post_time_line_post():
     name = request.form['name']
     email = request.form['email']
+    avatar_url = generateAvatarUrl(email)
     content = request.form['content']
     timeline_post = TimelinePost.create(name=name, email=email, content=content)
 
