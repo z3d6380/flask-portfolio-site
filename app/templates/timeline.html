@@ -40,7 +40,7 @@
           const form = document.getElementById('timeline_form');
 
           form.addEventListener('submit', function(e) {
-            
+            e.preventDefault();
 
             const prePayload = new FormData(form);
             const payload = new URLSearchParams(prePayload);
@@ -55,15 +55,20 @@
               .then(data => console.log(data))
               .catch(err => console.log(err));
 
+            fetch('/api/timeline_post', {
+              method: "GET",
+            })
+              .then(res => res.json())
+              .then(data => console.log(data))
+              .catch(err => console.log(err));
+
           })
-
-
         </script>
 
       </section><!-- End Timeline POST Section -->
 
     <!-- ======= Timeline GET Section ======= -->
-    <section id="timeline-displayed" class="timeline">
+    <section id="timeline-display" class="timeline">
       <div class="container" data-aos="fade-up">
 
         <div class="timeline">
