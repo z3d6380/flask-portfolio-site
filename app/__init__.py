@@ -15,7 +15,8 @@ mydb = MySQLDatabase(os.getenv("MYSQL_DATABASE"),user=os.getenv("MYSQL_USER"),pa
 def generateAvatarUrl(_email, _option = "identicon"):
     defaultImage = _option
     emailHash = hashlib.md5(_email.encode())
-    return 'https://www.gravatar.com/avatar/'+emailHash.hexdigest()+'?d='+defaultImage
+    url = "https://www.gravatar.com/avatar/" + emailHash.hexdigest() + "?d=" + defaultImage
+    return url
 
 class TimelinePost(Model):
     name = CharField()
