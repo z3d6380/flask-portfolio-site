@@ -14,7 +14,7 @@
   
             <div class="col-lg-12 mt-5 mt-lg-0">
   
-              <form id="timeline_form" method="post" role="form" class="php-email-form">
+              <form id="timeline_form" role="form">
                 <div class="row">
                   <div class="col-md-6 form-group">
                     <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
@@ -40,15 +40,25 @@
   
         </div>
 
+        <!-- Inline script to handle form post through Fetch API -->
         <script>
           const form = document.getElementById('timeline_form');
 
           form.addEventListener('submit', function(e) {
             e.preventDefault();
 
-            const payload = new FormData(form);
+            const prePayload = new FormData(form);
+            const payload = new URLSearchParams(prePayload);
 
             console.log([...payload]);
+
+            fetch('/api/timeline_post', {
+              method: "POST",
+              body: payload,
+            })
+              .then(res => res.json())
+              .then(data => console.log(data))
+              .catch(err => console.log(err));
           })
 
         </script>
