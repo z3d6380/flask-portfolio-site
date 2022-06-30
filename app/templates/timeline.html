@@ -8,10 +8,11 @@
       <p>{{ timeline_posts }}</p>
 
       {% for timeline_post in timeline_posts %}
-        {% for key, value in timeline_post %}
-          <p>Key: {{key}}</p>
-          <p>Value: {{value}}</p>
-        {% endfor %}
+        <ul>
+          <li>
+            <p>{{ timeline_post }}</p>
+          </li>
+        </ul>
       {% endfor %}
 
       <div class="timeline">
