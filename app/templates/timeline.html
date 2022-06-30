@@ -3,7 +3,7 @@
   <main id="main">
 
       <!-- ======= Timeline POST Section ======= -->
-      <section id="timeline" class="timeline">
+      <section id="timeline-form" class="timeline">
         <div class="container" data-aos="fade-up">
   
           <div class="section-title">
@@ -40,7 +40,7 @@
           const form = document.getElementById('timeline_form');
 
           form.addEventListener('submit', function(e) {
-            e.preventDefault();
+            
 
             const prePayload = new FormData(form);
             const payload = new URLSearchParams(prePayload);
@@ -57,12 +57,13 @@
 
           })
 
+
         </script>
 
       </section><!-- End Timeline POST Section -->
 
     <!-- ======= Timeline GET Section ======= -->
-    <section id="timeline" class="timeline">
+    <section id="timeline-displayed" class="timeline">
       <div class="container" data-aos="fade-up">
 
         <div class="timeline">
