@@ -10,9 +10,13 @@
       {% for timeline_post in timeline_posts %}
         <ul>
           <li>
-            <p>{{ timeline_post.Name }}</p>
+            <p>{{ timeline_post }}</p>
           </li>
         </ul>
+
+        {% for key, value in timeline_post.items() %}
+          <p>{{ key }}</p>
+        {% endfor %}
       {% endfor %}
 
       <div class="timeline">
