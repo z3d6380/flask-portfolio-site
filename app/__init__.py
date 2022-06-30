@@ -1,12 +1,23 @@
 import os
 import datetime
 from flask import Flask, render_template, request
+from flask_gravatar import Gravatar
 from dotenv import load_dotenv
 from peewee import *
 from playhouse.shortcuts import model_to_dict
 
 load_dotenv()
 app = Flask(__name__)
+
+
+gravatar = Gravatar(app,
+                    size=100,
+                    rating='g',
+                    default='identicon',
+                    force_default=False,
+                    force_lower=False,
+                    use_ssl=False,
+                    base_url=None)
 
 
 mydb = MySQLDatabase(os.getenv("MYSQL_DATABASE"),user=os.getenv("MYSQL_USER"),password=os.getenv("MYSQL_PASSWORD"),host=os.getenv("MYSQL_HOST"),port=3306)
@@ -73,15 +84,6 @@ def GetPerson():
 
     person = Luis
     return person
-
-gravatar = Gravatar(app,
-                    size=100,
-                    rating='g',
-                    default='identicon',
-                    force_default=False,
-                    force_lower=False,
-                    use_ssl=False,
-                    base_url=None)
 
 @app.route('/')
 def index():
