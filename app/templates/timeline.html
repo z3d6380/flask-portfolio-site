@@ -72,7 +72,7 @@
 
               <div class="card">
                 <div class="info">
-                  <span><img src="{{ timeline_post['email']|gravatar }}" alt="{{timeline_post['name']}}" width="100" height="100"><h3 class="title" style='display:inline;'>{{ timeline_post['name']|title }}</h3></span>
+                  <img src="{{ timeline_post['email']|gravatar }}" alt="{{timeline_post['name']}}" width="100" height="100"><h3 class="title" style='display:inline;'>{{ timeline_post['name']|title }}</h3>
                   <p>{{ timeline_post['email'] }}</p>
                   <p>{{ timeline_post['content'] }}</p>
                   <p>{{ timeline_post['created_at'] }}</p>
