@@ -11,7 +11,7 @@ app = Flask(__name__)
 
 
 gravatar = Gravatar(app,
-                    size=16,
+                    size=100,
                     rating='g',
                     default='identicon',
                     force_default=False,
