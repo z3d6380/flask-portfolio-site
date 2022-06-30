@@ -1,5 +1,6 @@
 import os
 import datetime
+import hashlib
 from flask import Flask, render_template, request
 from dotenv import load_dotenv
 from peewee import *
@@ -11,9 +12,15 @@ app = Flask(__name__)
 
 mydb = MySQLDatabase(os.getenv("MYSQL_DATABASE"),user=os.getenv("MYSQL_USER"),password=os.getenv("MYSQL_PASSWORD"),host=os.getenv("MYSQL_HOST"),port=3306)
 
+def generateAvatarUrl(_email, _options = {}):
+    defaultImage = _options.defaultImage or "identicon"
+    emailHash = hashlib.md5(_email)
+    return 'https://www.gravatar.com/avatar/'+emailHash.hexdigest()+'?d='+defaultImage
+
 class TimelinePost(Model):
     name = CharField()
     email = CharField()
+    avatar_url = CharField(default=generateAvatarUrl(email))
     content = TextField()
     created_at = DateTimeField(default=datetime.datetime.now)
     class Meta:
@@ -21,8 +28,6 @@ class TimelinePost(Model):
 
 mydb.connect()
 mydb.create_tables([TimelinePost])
-
-print(mydb)
 
 class Person:
     def __init__(self, _name, _hobbies, _workExperience, _education, _aboutMe, _travelMapURL, _profileImageURL = "./static/img/logo.jpg", _summary = "", _tagline = ""):
