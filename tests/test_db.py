@@ -25,11 +25,16 @@ class TestTimelinePost(unittest.TestCase):
         test_db.close()
 
     def test_timeline_post(self):
-        # CReate 2 timeline posts
-        first_post = TimelinePost.create(name='John Doe',
-        email = 'john@example,com', content='Hello World, I\'m John!' )
+        # Create 2 timeline posts
+        first_post = TimelinePost.create(name='John Doe', email='john@example.com', content='Hello world, Im John!')
         assert first_post.id == 1
-        second_post = TimelinePost.create(name='Jane Doe', 
-        email = 'jame@example.com', content = 'Hello worl, I\'m Jane! ')
+        assert first_post.name == 'John Doe'
+        assert first_post.email == 'john@example.com'
+        assert first_post.content == 'Hello world, Im John!'
+
+        second_post = TimelinePost.create(name='Jane Doe', email='jane@example.com', content='Hello world, Im Jane!')
         assert second_post.id == 2
+        assert second_post.name == 'Jane Doe'
+        assert second_post.email == 'jane@example.com'
+        assert second_post.content == 'Hello world, Im Jane!'
         
