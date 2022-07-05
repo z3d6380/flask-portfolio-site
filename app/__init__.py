@@ -1,5 +1,6 @@
 import os
 import datetime
+import re
 from flask import Flask, render_template, request
 from flask_gravatar import Gravatar
 from dotenv import load_dotenv
@@ -105,14 +106,15 @@ def timeline():
 
 @app.route('/api/timeline_post', methods=['POST'])
 def post_time_line_post():
-
+    
     name = request.form.get('name')
     email = request.form.get('email')
+    email_re = re.compile(r"([-!#-'*+/-9=?A-Z^-~]+(\.[-!#-'*+/-9=?A-Z^-~]+)*|\"([]!#-[^-~ \t]|(\\[\t -~]))+\")@([-!#-'*+/-9=?A-Z^-~]+(\.[-!#-'*+/-9=?A-Z^-~]+)*|\[[\t -Z^-~]*])")
     content = request.form.get('content')
 
-    if not name or name == '':
+    if not name or name == '' or name is None:
         return "Invalid name", 400
-    elif not email or email == '' or email is None or "@" not in email:
+    elif not email or email == '' or email is None or not re.fullmatch(email_re, email):
         return "Invalid email", 400
     elif not content or content == '' or content is None:
         return "Invalid content", 400
