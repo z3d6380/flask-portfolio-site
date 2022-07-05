@@ -110,7 +110,7 @@ def post_time_line_post():
     email = request.form.get('email')
     content = request.form.get('content')
 
-    if not name or name == '' or name is None:
+    if not name or name == '':
         return "Invalid name", 400
     elif not email or email == '' or email is None or "@" not in email:
         return "Invalid email", 400
