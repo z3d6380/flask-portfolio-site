@@ -17,7 +17,7 @@ gravatar = Gravatar(app,
                     default='identicon',
                     force_default=False,
                     force_lower=False,
-                    use_ssl=False,
+                    use_ssl=True,
                     base_url=None)
 
 if os.getenv("TESTING") == "true":
