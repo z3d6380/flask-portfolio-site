@@ -73,7 +73,7 @@
             {% for timeline_post in timeline_posts %}
 
               <div class="card">
-                <a href="/api/timeline_post/{{ timeline_post['id'] }}" class="close-thik"></a>
+                <a href="/api/timeline_post/{{ timeline_post['id'] }}" class="close-thik" method="DELETE"></a>
                 <div class="info">
                   <img class="gravatar" src="{{ timeline_post['email']|gravatar }}" alt="{{timeline_post['name']}}"><h3 class="title">{{ timeline_post['name']|title }}</h3>
                   <p>{{ timeline_post['email'] }}</p>
