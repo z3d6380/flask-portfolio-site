@@ -73,7 +73,7 @@
             {% for timeline_post in timeline_posts %}
 
               <div class="card">
-                <a type="click" class="close-thik" id="{{ timeline_post['id'] }}"></a>
+                <a href="/api/timeline_post/{{ timeline_post['id'] }}" class="close-thik"></a>
                 <div class="info">
                   <img class="gravatar" src="{{ timeline_post['email']|gravatar }}" alt="{{timeline_post['name']}}"><h3 class="title">{{ timeline_post['name']|title }}</h3>
                   <p>{{ timeline_post['email'] }}</p>
@@ -88,32 +88,6 @@
         </div>
 
       </div>
-
-      <!-- Inline script to handle timeline post DELETE Fetch API -->
-      <script>
-        const card = document.getElementById('close-thik');
-
-        card.addEventListener('click', function(e) {
-          e.preventDefault();
-
-          const prePayload = new FormData(card);
-          const payload = new URLSearchParams(prePayload);
-
-          console.log([...payload]);
-
-          // fetch('/api/timeline_post', {
-          //   method: "DELETE",
-          //   body: payload,
-          // })
-          //   .then(res => res.json())
-          //   .then(data => console.log(data))
-          //   .then(() => {
-          //     window.location.reload();
-          //   })
-          //   .catch(err => console.log(err));
-
-        })
-      </script>
 
     </section><!-- End Timeline GET Section -->
 
