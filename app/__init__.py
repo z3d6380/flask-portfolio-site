@@ -1,7 +1,7 @@
 import os
 import datetime
 import re
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, abort
 from flask_gravatar import Gravatar
 from dotenv import load_dotenv
 from peewee import *
@@ -145,6 +145,6 @@ def delete_time_line_by_post(id):
     deleted = TimeLinePost.get(TimeLinePost.id == id)
     try:
         TimeLinePost.delete_by_id(id)
-        return model_to_dict(deleted) + redirect('/timeline')
+        return redirect('/timeline')
     except:
         return "There was a problem trying to delete -> " + model_to_dict(deleted)
