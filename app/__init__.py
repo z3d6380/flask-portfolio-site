@@ -145,6 +145,6 @@ def delete_time_line_by_post(id):
     deleted = TimeLinePost.get(TimeLinePost.id == id)
     try:
         TimeLinePost.delete_by_id(id)
-        return redirect('/timeline')
+        return redirect(url_for('delete_time_line_by_post'))
     except:
         return "There was a problem trying to delete -> " + model_to_dict(deleted)
