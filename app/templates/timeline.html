@@ -4,7 +4,7 @@
 
       <!-- ======= Timeline POST Section ======= -->
       <section id="timeline-form" class="timeline">
-        <div class="container" data-aos="fade-up">
+        <div class="container">
   
           <div class="section-title">
             <h2>Timeline</h2>
@@ -65,14 +65,14 @@
 
     <!-- ======= Timeline GET Section ======= -->
     <section id="timeline-display" class="timeline">
-      <div class="container" data-aos="fade-up">
+      <div class="container">
 
         <div class="timeline">
           <div class="outer">
 
             {% for timeline_post in timeline_posts %}
 
-              <div class="card">
+              <div class="card" data-aos="fade-up">
                 <a href="/api/timeline_post/{{ timeline_post['id'] }}" class="close-thik"></a>
                 <div class="info">
                   <img class="gravatar" src="{{ timeline_post['email']|gravatar }}" alt="{{timeline_post['name']}}"><h3 class="title">{{ timeline_post['name']|title }}</h3>
