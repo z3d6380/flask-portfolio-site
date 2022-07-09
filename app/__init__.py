@@ -133,18 +133,18 @@ def get_time_line_post():
         ]
     }
 
-# @app.route('/api/timeline_post', methods=['DELETE'])
-# def delete_time_line_post():
-#     id = request.form['id']
-#     deleted = TimeLinePost.get(TimeLinePost.id == id)
-#     TimeLinePost.delete_by_id(id)
-#     return model_to_dict(deleted)
+@app.route('/api/timeline_post', methods=['DELETE'])
+def delete_time_line_post():
+    id = request.form['id']
+    deleted = TimeLinePost.get(TimeLinePost.id == id)
+    TimeLinePost.delete_by_id(id)
+    return model_to_dict(deleted)
 
-@app.route('/api/timeline_post/<int:id>', methods=['DELETE'])
-def delete_time_line_post(id):
+@app.route('/api/timeline_post/<int:id>')
+def delete_time_line_by_post(id):
     deleted = TimeLinePost.get(TimeLinePost.id == id)
     try:
         TimeLinePost.delete_by_id(id)
-        return model_to_dict(deleted) + redirect('/timeline')
+        return redirect('/timeline')
     except:
         return "There was a problem trying to delete -> " + model_to_dict(deleted)
