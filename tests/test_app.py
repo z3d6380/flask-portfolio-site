@@ -21,6 +21,9 @@ class AppTestCase(unittest.TestCase):
         html = response.get_data(as_text=True)
         assert "<h2>About</h2>" in html
 
+        # Todo Add more tests relating to the home page
+        assert '<div class="container" data-aos="fade-up">' in html
+
     def test_timeline(self):
         response = self.client.get("/api/timeline_post")
         assert response.status_code == 200
