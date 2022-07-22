@@ -9,17 +9,14 @@ on:
   workflow_dispatch:
 
 jobs:
-  dependency_check:
-    name: "Dependency Check"
-    steps:
-      - name: Tests Failed
-        if: ${{ github.event.workflow_run.conclusion == 'failure' }}
-        run: exit 1
   deploy:
-    needs: dependency_check
     name: "Deploy to VPS"
     runs-on: ubuntu-latest
     steps:
+      - name: Check Dependencies
+        if: ${{ github.event.workflow_run.conclusion == 'failure' }}
+        run: exit 1
+        
       - name: Configure SSH
         run: |
           mkdir -p ~/.ssh/
