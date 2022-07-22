@@ -19,7 +19,7 @@ jobs:
 
       - name: Testing Failure Notification
         if: ${{ failure() }}
-        run: curl -s -X POST "${{ secrets.DISCORD_WEBHOOK }}" -d "content=🚨 Deployment Failed due to failed tests"
+        run: curl -s -X POST "${{ secrets.DISCORD_WEBHOOK }}" -d "content=🚨 Failed Tests"
 
       - name: Configure SSH
         run: |
