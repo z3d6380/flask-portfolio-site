@@ -35,4 +35,8 @@ jobs:
         run: ssh my-vps '~/redeploy-site.sh'
 
       - name: Get Container Status
-        run: ssh my-vps 'cd ${{ secrets.PROJECT_ROOT }} && docker compose ps --status=running && curl -s -X POST "${{ secrets.DISCORD_WEBHOOK }}" -d "content=🚀 Deployment Successful"'
+        run: ssh my-vps 'cd ${{ secrets.PROJECT_ROOT }} && docker compose ps --status=running && curl -s -X POST "${{ secrets.DISCORD_WEBHOOK }}" -d "content=🚀 Deployment Successful" && exit 1'
+
+      - name: Failure Notification
+        if: ${{ failure() }}
+        run: curl -s -X POST "${{ secrets.DISCORD_WEBHOOK }}" -d "content=🚨 Deployment Failed"
