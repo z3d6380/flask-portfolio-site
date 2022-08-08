@@ -9,10 +9,10 @@ services:
     depends_on:
       - mysql
     healthcheck:
-      test: "curl -f localhost:5000"
-      interval: 5s
-      timeout: 5s
-      retries: 20
+      test: "wget --no-verbose --tries=1 --spider http://localhost || exit 1"
+      interval: 2s
+      timeout: 20s
+      retries: 10
   
   mysql:
     container_name: mysql
@@ -43,10 +43,10 @@ services:
     depends_on:
       - myportfolio
     healthcheck:
-      test: "curl -f https://luis-moraguez.duckdns.org/"
-      interval: 5s
-      timeout: 5s
-      retries: 20
+      test: "wget --no-verbose --tries=1 --spider http://localhost || exit 1"
+      interval: 2s
+      timeout: 20s
+      retries: 10
 
 volumes:
   mydatabase:
