@@ -23,9 +23,10 @@ services:
     volumes:
       - mydatabase:/var/lib/mysql
     healthcheck:
-      test: "/etc/init.d/mysql status"
-      interval: 10s
-      retries: 12
+      test: "/usr/bin/mysql --user=root --password=$$MYSQL_ROOT_PASSWORD --execute \"SHOW DATABASES;\""
+      interval: 2s
+      timeout: 20s
+      retries: 10
 
   nginx:
     container_name: nginx
