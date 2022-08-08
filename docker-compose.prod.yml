@@ -9,10 +9,10 @@ services:
     depends_on:
       - mysql
     healthcheck:
-      test: curl --fail -s http://localhost:5000/ || exit 1
-      interval: 1m30s
-      timeout: 10s
-      retries: 3
+      test: "curl -f localhost:5000"
+      interval: 5s
+      timeout: 5s
+      retries: 20
   
   mysql:
     container_name: mysql
@@ -23,10 +23,9 @@ services:
     volumes:
       - mydatabase:/var/lib/mysql
     healthcheck:
-      test: curl --fail -s http://localhost:3306/ || exit 1
-      interval: 1m30s
-      timeout: 10s
-      retries: 3
+      test: "/etc/init.d/mysql status"
+      interval: 10s
+      retries: 12
 
   nginx:
     container_name: nginx
@@ -43,10 +42,10 @@ services:
     depends_on:
       - myportfolio
     healthcheck:
-      test: curl --fail -s https://luis-moraguez.duckdns.org/ || exit 1
-      interval: 1m30s
-      timeout: 10s
-      retries: 3
+      test: "curl -f https://luis-moraguez.duckdns.org/"
+      interval: 5s
+      timeout: 5s
+      retries: 20
 
 volumes:
   mydatabase:
